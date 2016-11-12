@@ -1,2 +1,2 @@
 # ethmsg
-A decentralized, encrypted messenger running on the Ethereum platform.
+A decentralized, encrypted messenger Dapp running on the Ethereum World Computer.
