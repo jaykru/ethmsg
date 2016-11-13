@@ -3,32 +3,34 @@ pragma solidity ^0.4.2;
 contract Messenger {
 
     struct Message {
-        address sender;
+        uint sender;
+        uint recipient;
         string text;
+        uint timestamp;
     }
 
-    mapping (address => Message[]) public messages;
+    mapping (uint => Message[]) public messages;
+    uint usercount = 0;
 
-    function sendMessage(address to, string talk) returns (bool) {
-        if (to != msg.sender) {
+    function sendMessage(uint to, uint from, string talk) {
             messages[to].push(Message({
-                sender: msg.sender,
+                sender: from,
+                recipient: to,
                 text: talk,
                 timestamp: now
             }));
-            return true;
-        }
-        else {
-            return false;
-        }
     }
     
-    function numMessages() returns (uint) {
-        return messages[msg.sender].length;
+    function numMessages(uint user) returns (uint) {
+        return messages[user].length;
+    }
+    
+    function userAdd() (uint){
+        return usercount++;
     }
 
-    function getMessage(uint index) returns (address sender, string text, uint timestamp) {
-        Message retmsg = messages[msg.sender][index];
+    function getMessage(uint user, uint index) returns (uint sender, string text, uint timestamp) {
+        Message retmsg = messages[user][index];
         return (retmsg.sender,retmsg.text,retmsg.timestamp);
     }
 }
