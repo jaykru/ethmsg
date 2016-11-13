@@ -5,7 +5,6 @@ contract Messenger {
     struct Message {
         address sender;
         string text;
-        uint timestamp;
     }
 
     mapping (address => Message[]) public messages;
