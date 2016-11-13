@@ -6,8 +6,12 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-burger-menu": "^1.10.9",
+    "react-dom": "^15.3.2",
+    "web3": "^0.17.0-beta"
   },
   "scripts": {
     "start": "react-scripts start",
